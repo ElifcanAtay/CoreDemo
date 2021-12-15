@@ -1,0 +1,19 @@
+﻿<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<div class="tech-btm">
+    <h4>Haber bültenimize abone olun</h4>
+    <p>Teknoloji, yazılım ve diğer bloklar...</p>
+    <form action="/NewsLetter/SubscribeMail/" method="post">
+        <input type="email" placeholder="Email" required="" name="Mail">
+        <input type="submit" id="aboneOl" name="aboneOl" value="Abone Ol">
+    </form>
+
+</div>
+
+<script>
+    $('#aboneOl').click(function () {
+        swal("Tebrkler başarıyla abone olundu");
+    });
+</script>
