@@ -12,36 +12,36 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager:ICategoryService
     {
-        EfCategoryRepository _efCategoryRepository;
+        ICategoryDal _categoryDal;
 
-        public CategoryManager(EfCategoryRepository efCategoryRepository)
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            _efCategoryRepository = efCategoryRepository;
+            _categoryDal = categoryDal;
         }
 
         public void CategoryAdd(Category category)
         {
-            _efCategoryRepository.Inset(category);
+            _categoryDal.Inset(category);
         }
 
         public void CategoryDelete(Category category)
         {
-            _efCategoryRepository.Delete(category);
+            _categoryDal.Delete(category);
         }
 
         public void CategoryUpdate(Category category)
         {
-            _efCategoryRepository.Update(category);
+            _categoryDal.Update(category);
         }
 
         public Category GetById(int id)
         {
-            return _efCategoryRepository.GetById(id);
+            return _categoryDal.GetById(id);
         }
 
         public List<Category> GetList()
         {
-            return _efCategoryRepository.GelListAll();
+            return _categoryDal.GelListAll();
         }
     }
 }
